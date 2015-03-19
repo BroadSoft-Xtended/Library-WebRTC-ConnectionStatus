@@ -1,0 +1,1 @@
+module.exports = {view: require('./lib/views/connectionstatus'), model: require('./lib/models/connectionstatus')};
