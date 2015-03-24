@@ -14,7 +14,7 @@ node_modules/models: lib/models
 
 ## Compile styles ##################################################################
 styles/css: $(STYLUS_FILES)
-	stylus --include-css styles/connectionstatus.styl -o styles
+	stylus --include-css -u stylus-font-face --with {limit:20000} styles/connectionstatus.styl -o styles
 
 styles/min.css: styles/css
 	cssmin styles/*.css > styles/connectionstatus.min.css
