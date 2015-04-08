@@ -1,6 +1,6 @@
 {
   "name": "webrtc-connectionstatus",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Connection Status module for webrtc client",
   "main": "index.js",
   "scripts": {
