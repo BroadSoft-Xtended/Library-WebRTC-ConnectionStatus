@@ -7,9 +7,7 @@ describe('connectionstatus', function() {
   before(function(){
     core = require('webrtc-core');
     testUA = core.testUA;
-    var config = {enableRegistrationIcon: true, enableConnectedIcon: true};
-    testUA.createCore('configuration', config);
-    testUA.createCore('sipstack', config);
+    testUA.createCore('sipstack', {});
     testUA.createModelAndView('connectionstatus', {connectionstatus: require('../')});
     testUA.mockWebRTC();
   });
