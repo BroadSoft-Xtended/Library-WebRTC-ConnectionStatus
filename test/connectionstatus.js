@@ -7,8 +7,13 @@ describe('connectionstatus', function() {
   before(function(){
     core = require('webrtc-core');
     testUA = core.testUA;
-    testUA.createCore('sipstack', {});
-    testUA.createModelAndView('connectionstatus', {connectionstatus: require('../')});
+    testUA.createModelAndView('sipstack', {
+      sipstack: require('webrtc-sipstack')
+    });
+    testUA.createModelAndView('connectionstatus', {
+      connectionstatus: require('../'),
+      sipstack: require('webrtc-sipstack')
+    });
     testUA.mockWebRTC();
   });
 
