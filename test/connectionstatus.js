@@ -1,20 +1,13 @@
-var jsdom = require('mocha-jsdom');
-expect = require('expect');
-jsdom({});
-
+test = require('../node_modules/webrtc-sipstack/test/includes/common')(require('../node_modules/webrtc-core/test/includes/common'));
 describe('connectionstatus', function() {
-
   before(function(){
-    core = require('webrtc-core');
-    testUA = core.testUA;
-    testUA.createModelAndView('sipstack', {
+    test.createModelAndView('sipstack', {
       sipstack: require('webrtc-sipstack')
     });
-    testUA.createModelAndView('connectionstatus', {
+    test.createModelAndView('connectionstatus', {
       connectionstatus: require('../'),
       sipstack: require('webrtc-sipstack')
     });
-    testUA.mockWebRTC();
   });
 
   it('on startup', function() {
@@ -22,21 +15,21 @@ describe('connectionstatus', function() {
     expect(connectionstatus.connected).toEqual(undefined);
   });
   it('on connected', function() {
-    testUA.connect();
+    test.connect();
     expect(connectionstatus.connected).toEqual(true);
   });
   it('on disconnected', function() {
-    testUA.connect();
-    testUA.disconnect();
+    test.connect();
+    test.disconnect();
     expect(connectionstatus.connected).toEqual(false);
   });
   it('on registered', function() {
-    testUA.registered();
+    test.registered();
     expect(connectionstatus.registered).toEqual(true);
   });
   it('on registrationFailed', function() {
-    testUA.registered();
-    testUA.registrationFailed();
+    test.registered();
+    test.registrationFailed();
     expect(connectionstatus.registered).toEqual(false);
   });
 });

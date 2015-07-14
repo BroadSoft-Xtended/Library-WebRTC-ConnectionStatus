@@ -4,7 +4,7 @@ Displays the registration and websocket connection status.
 
 Model : bdsft_webrtc.default.connectionstatus
 View : bdsft_webrtc.default.connectionstatusview
-Dependencies : [SIP Stack](../sipstack)
+Dependencies : [SIP Stack](https://github.com/BroadSoft-Xtended/Library-WebRTC-SIPStack)
 
 ## Elements
 <a name="elements"></a>
