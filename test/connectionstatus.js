@@ -1,13 +1,14 @@
-test = require('../node_modules/webrtc-sipstack/test/includes/common')(require('../node_modules/webrtc-core/test/includes/common'));
+test = require('../node_modules/webrtc-sipstack/test/includes/common')(require('../node_modules/bdsft-sdk-test/lib/common'));
 describe('connectionstatus', function() {
   before(function(){
-    test.createModelAndView('sipstack', {
-      sipstack: require('webrtc-sipstack')
-    });
     test.createModelAndView('connectionstatus', {
       connectionstatus: require('../'),
-      sipstack: require('webrtc-sipstack')
+      sipstack: require('webrtc-sipstack'),
+      eventbus: require('bdsft-sdk-eventbus'),
+      debug: require('bdsft-sdk-debug'),
+      core: require('webrtc-core')
     });
+    sipstack = bdsft_client_instances.test.sipstack.sipstack;
   });
 
   it('on startup', function() {
